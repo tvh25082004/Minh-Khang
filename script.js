@@ -164,11 +164,81 @@
     const dots = $$('.dot', dotsWrap);
 
     function syncDots() {
-        const activeIdx = Math.round(swipeTrack.scrollLeft / (swipeTrack.children[0].offsetWidth + 16));
-        dots.forEach((d, i) => d.classList.toggle('active', i === Math.min(activeIdx, slides.length - 1)));
+        const activeIdx = Math.min(Math.round(swipeTrack.scrollLeft / (swipeTrack.children[0].offsetWidth + 16)), slides.length - 1);
+        dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+        autoIdx = activeIdx;
     }
 
     swipeTrack.addEventListener('scroll', syncDots, { passive: true });
+
+    /* =========================================================
+       ALBUM TỰ ĐỘNG CHẠY (autoplay)
+       Ngừng khi bạn chạm/rê chuột, rồi tự chạy lại sau một chút
+       ========================================================= */
+    const AUTOPLAY_MS = 3200;
+    const RESUME_MS = 7000;
+    const swipeSection = $('#swipe');
+
+    let autoIdx = 0;
+    let autoTimer = null;
+    let inView = true;
+    let interacting = false;
+    let resumeTimer = null;
+
+    function goToSlide(idx) {
+        autoIdx = (idx + slides.length) % slides.length;
+        slides[autoIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    function stopAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+
+    function startAuto() {
+        stopAuto();
+        if (!inView || interacting || document.hidden) return;
+        autoTimer = setInterval(() => {
+            if (document.hidden) return;
+            goToSlide(autoIdx + 1);
+        }, AUTOPLAY_MS);
+    }
+
+    function holdAuto(delay) {
+        interacting = true;
+        stopAuto();
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => {
+            interacting = false;
+            startAuto();
+        }, delay || RESUME_MS);
+    }
+
+    ['touchstart', 'pointerdown'].forEach((evt) =>
+        swipeTrack.addEventListener(evt, () => holdAuto(), { passive: true })
+    );
+    ['touchend', 'pointerup'].forEach((evt) =>
+        swipeTrack.addEventListener(evt, () => holdAuto(RESUME_MS), { passive: true })
+    );
+    swipeTrack.addEventListener('mouseenter', () => holdAuto());
+    swipeTrack.addEventListener('mouseleave', () => holdAuto(RESUME_MS));
+
+    /* Chỉ chạy khi album nằm trong màn hình */
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.target === swipeSection) {
+                    inView = entry.isIntersecting;
+                    startAuto();
+                }
+            });
+        }, { threshold: 0.35 }).observe(swipeSection);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopAuto(); else startAuto();
+    });
+
+    startAuto();
 
     /* =========================================================
        LIGHTBOX XEM ẢNH
@@ -188,11 +258,13 @@
         lbCounter.textContent = (lbIndex + 1) + ' / ' + slides.length;
         lightbox.classList.add('show');
         document.body.style.overflow = 'hidden';
+        stopAuto();
     }
 
     function closeLightbox() {
         lightbox.classList.remove('show');
         document.body.style.overflow = '';
+        startAuto();
     }
 
     function navLightbox(dir) {
@@ -249,7 +321,7 @@
     $('#shareInvite').addEventListener('click', async () => {
         const shareData = {
             title: 'Thôi Nôi Bé Gấu - Tròn 1 Tuổi',
-            text: 'Thiệp mời thôi nôi bé Gấu - Lê Chí Minh Khang (18h00, 03/12/2026 - Số nhà 28/68, Ái Sơn). Cùng gửi lời chúc yêu thương đến bé nhé!',
+            text: 'Thiệp mời thôi nôi bé Gấu - Lê Chí Minh Khang (18h00, 03/12/2026 - Số nhà 28/68, phố Ái Sơn, phường Hạc Thành, TP Thanh Hóa). Cùng gửi lời chúc yêu thương đến bé nhé!',
             url: window.location.href
         };
         if (navigator.share) {

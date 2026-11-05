@@ -403,6 +403,7 @@ body {
     border: 6px solid #fff;
     box-shadow: 0 18px 40px rgba(47, 109, 92, .28);
     animation: photoFloat 6s ease-in-out infinite;
+    transform-origin: 50% 60%;
 }
 
 .birthday-photo::before {
@@ -425,8 +426,8 @@ body {
 @keyframes spin { to { transform: rotate(360deg); } }
 
 @keyframes photoFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50%      { transform: translateY(-9px) rotate(1deg); }
+    0%, 100% { transform: translateY(0) rotate(-1.4deg); }
+    50%      { transform: translateY(-9px) rotate(2.4deg); }
 }
 
 .birthday-emoji span {
@@ -830,9 +831,26 @@ body {
     object-fit: cover;
     display: block;
     transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+    animation: photoTilt 5.5s ease-in-out infinite;
 }
 
-.slide:active img { transform: scale(1.05); }
+.slide:nth-child(even) img { animation-name: photoTiltRev; }
+.slide:nth-child(2) img { animation-delay: .7s; }
+.slide:nth-child(3) img { animation-delay: 1.3s; }
+.slide:nth-child(4) img { animation-delay: 1.9s; }
+.slide:nth-child(5) img { animation-delay: 2.5s; }
+
+@keyframes photoTilt {
+    0%, 100% { transform: rotate(-1.6deg) scale(1); }
+    50%      { transform: rotate(1.6deg) scale(1.045); }
+}
+
+@keyframes photoTiltRev {
+    0%, 100% { transform: rotate(1.6deg) scale(1.045); }
+    50%      { transform: rotate(-1.6deg) scale(1); }
+}
+
+.slide:active img { animation: none; transform: scale(1.05); }
 
 .slide::after {
     content: '';
@@ -887,6 +905,7 @@ body {
     aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
+    animation: photoTiltRev 7s ease-in-out infinite;
 }
 
 .thanks-veil {
@@ -1018,7 +1037,7 @@ body {
     border: 4px solid #fff;
 }
 
-.gate-photo img { width: 100%; height: 100%; object-fit: cover; }
+.gate-photo img { width: 100%; height: 100%; object-fit: cover; animation: photoTilt 6s ease-in-out infinite; }
 
 .gate-photo::after {
     content: '';
