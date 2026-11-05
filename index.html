@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFF8EC">
+    <meta name="description" content="Thiệp mời thôi nôi bé Gấu (Le Chí Minh Khang) - Tròn 1 tuổi">
+    <title>Thôi Nôi Bé Gấu · Tròn 1 Tuổi</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ====== CỔNG CHÀO - bấm để mở thiệp & bật nhạc ====== -->
+    <div id="gate">
+        <div class="gate-blur"></div>
+        <div class="gate-balloon gate-balloon-1">🎈</div>
+        <div class="gate-balloon gate-balloon-2">🎈</div>
+        <div class="gate-balloon gate-balloon-3">🎈</div>
+        <div class="gate-balloon gate-balloon-4">🎈</div>
+
+        <div class="gate-card">
+            <div class="gate-photo">
+                <img src="images/img-01.jpeg" alt="Bé Gấu">
+                <div class="gate-photo-shine"></div>
+            </div>
+            <p class="gate-script">Chào bé yêu</p>
+            <h1 class="gate-name">Gấu</h1>
+            <div class="gate-title">
+                <span>THÔI NÔI</span>
+                <span class="gate-dot">·</span>
+                <span>TRÒN 1 TUỔI</span>
+            </div>
+            <div class="gate-date">
+                <i class="fa-solid fa-cake-candles"></i>
+                Thứ Năm · 03 . 12 . 2026
+            </div>
+            <button id="gateOpenBtn" class="gate-btn">
+                <span class="gate-btn-icon">🎈</span>
+                Mở thiệp &amp; nghe nhạc
+            </button>
+            <p class="gate-hint">Một chút yêu thương gửi đến bạn</p>
+        </div>
+
+        <div class="gate-bottom">
+            <div class="gate-cloud gate-cloud-1"></div>
+            <div class="gate-cloud gate-cloud-2"></div>
+        </div>
+    </div>
+
+    <!-- ====== NHẠC NỀN ====== -->
+    <audio id="bgm" loop preload="auto">
+        <source src="audio/khuc-hat-mung-sinh-nhat.mp3" type="audio/mpeg">
+        <source src="audio/giac-mo-than-tien.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ====== NỘI DUNG THIỆP ====== -->
+    <main class="invitation" id="invitation">
+
+        <!-- Nền chấm bi mềm mại -->
+        <div class="dots-bg"></div>
+
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="hero">
+            <div class="hero-bg" id="heroBg">
+                <img src="images/img-01.jpeg" alt="Bé Gấu tròn 1 tuổi">
+            </div>
+            <div class="hero-veil"></div>
+
+            <div class="floaties" aria-hidden="true">
+                <div class="balloon b1">🎈</div>
+                <div class="balloon b2">🎈</div>
+                <div class="balloon b3">🎈</div>
+                <div class="balloon b4">🎈</div>
+                <div class="balloon b5">🎈</div>
+                <div class="star s1">✦</div>
+                <div class="star s2">✦</div>
+                <div class="star s3">✦</div>
+                <div class="cloud c1"></div>
+                <div class="cloud c2"></div>
+                <div class="cloud c3"></div>
+            </div>
+
+            <div class="hero-content">
+                <p class="hero-script">Hân hoan chào đón</p>
+                <h1 class="hero-name">Gấu</h1>
+                <div class="hero-age">
+                    <span class="hero-age-line"></span>
+                    <span>TRÒN 1 TUỔI</span>
+                    <span class="hero-age-line"></span>
+                </div>
+                <p class="hero-sub">Lê Chí Minh Khang · Sinh nhật của bé yêu</p>
+                <div class="hero-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Thứ Năm · 03 . 12 . 2026
+                </div>
+            </div>
+
+            <a class="scroll-hint" href="#letter" aria-label="Cuộn xuống">
+                <span>Cuộn xuống</span>
+                <span class="scroll-dot"></span>
+            </a>
+        </section>
+
+        <!-- ========== THƯ MỜI ========== -->
+        <section class="section letter reveal" id="letter">
+            <div class="ornament">
+                <span class="orn-left"></span>
+                <span class="orn-icon">🧸</span>
+                <span class="orn-right"></span>
+            </div>
+            <p class="sec-script">Thư mời</p>
+            <h2 class="sec-title">THÔI NÔI BÉ GẤU</h2>
+
+            <div class="letter-body">
+                <p class="dropcap">Thân thưa quý ông bà, cô chú, anh chị và các bạn!</p>
+                <p>
+                    Thiên thần nhỏ <strong>Gấu</strong> — bé <strong>Lê Chí Minh Khang</strong> —
+                    của gia đình chúng tôi đã tròn một tuổi. Tròn một năm đầy ắp tiếng cười,
+                    những bước đi chập chững đầu đời và thật nhiều khoảnh khắc đáng yêu.
+                </p>
+                <p>
+                    Gia đình nhỏ của bé trân trọng kính mời quý vị đến chung vui
+                    trong ngày <strong>Thôi Nôi</strong> của bé, để cùng gửi đến Gấu
+                    những lời chúc yêu thương nhất.
+                </p>
+            </div>
+
+            <div class="letter-sign">
+                <span class="sign-line"></span>
+                <span>Bố &amp; Mẹ của Gấu</span>
+                <span class="sign-line"></span>
+            </div>
+        </section>
+
+        <!-- ========== SINH NHẬT - SỐ 1 ========== -->
+        <section class="section birthday reveal">
+            <div class="birthday-photo">
+                <img src="images/img-02.jpeg" alt="Lịch lớn lên của Minh Khang">
+                <div class="birthday-photo-frame"></div>
+            </div>
+            <div class="birthday-emoji" aria-hidden="true">
+                <span class="em-cake">🎂</span>
+                <span class="em-balloon">🎈</span>
+                <span class="em-toy">🧸</span>
+            </div>
+
+            <p class="sec-script">Ngày vui của con</p>
+            <h2 class="sec-title">GẤU LÊN 1</h2>
+
+            <div class="big-one">
+                <span class="big-one-num">1</span>
+                <span class="big-one-sub">tuổi</span>
+            </div>
+
+            <div class="birthday-meta">
+                <div class="meta-item">
+                    <i class="fa-solid fa-baby"></i>
+                    <span class="meta-label">Ngày sinh</span>
+                    <span class="meta-value">Thứ Tư · 03 / 12 / 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <span class="meta-label">Thôi nôi</span>
+                    <span class="meta-value">Thứ Năm · 03 / 12 / 2026</span>
+                </div>
+            </div>
+
+            <div class="candle-row" aria-hidden="true">
+                <div class="candle">
+                    <span class="flame"></span>
+                    <span class="wick"></span>
+                    <span class="stick"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== LỜI CHÚC CỦA BỐ MẸ ========== -->
+        <section class="section wishes reveal">
+            <div class="wishes-card">
+                <span class="quote-mark quote-open">“</span>
+                <p class="sec-script">Lời yêu thương</p>
+                <h2 class="sec-title">TỪ BỐ MẸ</h2>
+
+                <div class="wishes-text">
+                    <p>
+                        Gấu ơi! Hôm nay con tròn một tuổi rồi. Với bố mẹ, con mãi là
+                        món quà quý giá nhất mà cuộc đời đã trao tặng.
+                    </p>
+                    <p>
+                        Cảm ơn con đã chọn gia đình mình. Bố mẹ chỉ mong con
+                        <em>một đời bình an</em>, luôn khỏe mạnh, cười thật nhiều và
+                        mãi là đứa trẻ hồn nhiên như bây giờ.
+                    </p>
+                    <p class="wishes-strong">
+                        Con cứ lớn lên thật vui nhé, mọi điều còn lại cứ để bố mẹ lo.
+                    </p>
+                </div>
+
+                <div class="wishes-sign">
+                    <span class="sign-line"></span>
+                    <span class="wishes-sign-name">Bố mẹ của Gấu</span>
+                    <span class="sign-line"></span>
+                </div>
+                <span class="quote-mark quote-close">”</span>
+            </div>
+        </section>
+
+        <!-- ========== ĐẾM NGƯỢC ========== -->
+        <section class="section countdown reveal">
+            <div class="count-bg-emoji" aria-hidden="true">
+                <span>🎈</span><span>⭐</span><span>🎈</span><span>⭐</span>
+            </div>
+            <p class="sec-script">Chờ ngày vui</p>
+            <h2 class="sec-title">ĐẾM NGƯỢC</h2>
+
+            <div class="timer" id="timer">
+                <div class="timer-cell">
+                    <span class="timer-num" id="tDays">00</span>
+                    <span class="timer-label">Ngày</span>
+                </div>
+                <span class="timer-colon">:</span>
+                <div class="timer-cell">
+                    <span class="timer-num" id="tHours">00</span>
+                    <span class="timer-label">Giờ</span>
+                </div>
+                <span class="timer-colon">:</span>
+                <div class="timer-cell">
+                    <span class="timer-num" id="tMins">00</span>
+                    <span class="timer-label">Phút</span>
+                </div>
+                <span class="timer-colon">:</span>
+                <div class="timer-cell">
+                    <span class="timer-num" id="tSecs">00</span>
+                    <span class="timer-label">Giây</span>
+                </div>
+            </div>
+
+            <p class="countdown-note">Cho ngày <strong>03 · 12 · 2026</strong> — tiệc thôi nôi của bé Gấu</p>
+        </section>
+
+        <!-- ========== THÔNG TIN BUỔI TIỆC ========== -->
+        <section class="section event reveal">
+            <p class="sec-script">Hẹn gặp bạn</p>
+            <h2 class="sec-title">THÔNG TIN BUỔI TIỆC</h2>
+
+            <div class="event-card">
+                <div class="event-row">
+                    <div class="event-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <div class="event-info">
+                        <span class="event-label">Ngày vui</span>
+                        <span class="event-value">Thứ Năm, 03 tháng 12 năm 2026</span>
+                    </div>
+                </div>
+                <!-- ✏️ SỬA THỜI GIAN TẠI ĐÂY -->
+                <div class="event-row">
+                    <div class="event-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="event-info">
+                        <span class="event-label">Thời gian</span>
+                        <span class="event-value" id="eventTime">18h00 (6 giờ chiều)</span>
+                    </div>
+                </div>
+                <!-- ✏️ SỬA ĐỊA ĐIỂM TẠI ĐÂY -->
+                <div class="event-row">
+                    <div class="event-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="event-info">
+                        <span class="event-label">Địa điểm</span>
+                        <span class="event-value" id="eventPlace">Số nhà 28/68, Ái Sơn</span>
+                    </div>
+                </div>
+                <!-- ✏️ SỬA LINK GOOGLE MAPS TẠI ĐÂY -->
+                <a class="event-map-btn" id="mapLink" href="https://www.google.com/maps/search/?api=1&query=%C3%81i+S%C6%A1n%2C+Th%E1%BB%A7y+Nguy%C3%AAn%2C+H%E1%BA%A3i+Ph%C3%B2ng" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-map"></i>
+                    Xem bản đồ chỉ đường
+                </a>
+            </div>
+        </section>
+
+        <!-- ========== ALBUM ẢNH - vuốt ngang ========== -->
+        <section class="section album reveal">
+            <p class="sec-script">Nhìn con lớn lên</p>
+            <h2 class="sec-title">KHOẢNH KHẮC CỦA GẤU</h2>
+            <p class="album-hint">Vuốt sang để xem nhé <i class="fa-solid fa-hand-pointer"></i></p>
+
+            <div class="swipe" id="swipe">
+                <div class="swipe-track" id="swipeTrack">
+                    <figure class="slide" data-caption="Bé Gấu rạng rỡ trong ngày kỷ niệm">
+                        <img src="images/img-01.jpeg" alt="Bé Gấu 1">
+                    </figure>
+                    <figure class="slide" data-caption="Một năm lớn lên của Minh Khang">
+                        <img src="images/img-02.jpeg" alt="Bé Gấu 2">
+                    </figure>
+                    <figure class="slide" data-caption="Ngày vui tròn 1 tuổi của Gấu">
+                        <img src="images/img-03.jpeg" alt="Bé Gấu 3">
+                    </figure>
+                    <figure class="slide" data-caption="Gấu ngoan ngoãn, êm đềm bình an">
+                        <img src="images/img-04.jpeg" alt="Bé Gấu 4">
+                    </figure>
+                    <figure class="slide" data-caption="Nụ cười tỏa nắng của bé Gấu">
+                        <img src="images/img-05.jpeg" alt="Bé Gấu 5">
+                    </figure>
+                </div>
+                <div class="swipe-dots" id="swipeDots"></div>
+            </div>
+        </section>
+
+        <!-- ========== LỜI CẢM ƠN ========== -->
+        <section class="section thanks reveal">
+            <div class="thanks-photo">
+                <img src="images/img-03.jpeg" alt="Bé Gấu cảm ơn">
+                <div class="thanks-veil"></div>
+                <div class="thanks-text">
+                    <p class="thanks-script">Cảm ơn &amp; hẹn gặp</p>
+                    <p class="thanks-sub">Sự hiện diện của bạn là niềm vui lớn nhất dành cho Gấu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== NÚT CHIA SẺ ========== -->
+        <section class="section share reveal">
+            <p class="share-note">Hãy gửi lời chúc yêu thương đến Gấu nhé</p>
+            <div class="share-buttons">
+                <button class="share-btn" id="shareInvite">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    Chia sẻ thiệp mời
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====== THANH NHẠC DƯỚI ====== -->
+    <div class="music-bar hidden" id="musicBar">
+        <button class="music-toggle" id="musicToggle" aria-label="Bật tắt nhạc">
+            <span class="music-toggle-icon">
+                <i class="fa-solid fa-play" id="musicPlayIcon"></i>
+                <i class="fa-solid fa-pause" id="musicPauseIcon"></i>
+            </span>
+        </button>
+        <div class="music-meta">
+            <span class="music-title" id="musicTitle">Khúc Hát Mừng Sinh Nhật</span>
+            <div class="music-progress"><span id="musicProgress"></span></div>
+        </div>
+        <button class="music-next" id="musicNext" aria-label="Đổi bài">
+            <i class="fa-solid fa-forward"></i>
+        </button>
+    </div>
+
+    <!-- ====== LIGHTBOX XEM ẢNH ====== -->
+    <div id="lightbox">
+        <button class="lightbox-close" id="lbClose" aria-label="Đóng"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-stage">
+            <img id="lbImg" src="" alt="Ảnh bé Gấu">
+        </div>
+        <div class="lightbox-caption" id="lbCaption"></div>
+        <div class="lightbox-nav">
+            <button id="lbPrev" aria-label="Ảnh trước"><i class="fa-solid fa-chevron-left"></i></button>
+            <span class="lb-counter" id="lbCounter">1 / 5</span>
+            <button id="lbNext" aria-label="Ảnh sau"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span class="footer-heart">🎈</span>
+        <p>Thiệp mời thôi nôi bé Gấu · Tròn 1 tuổi</p>
+        <p class="footer-sub">03 · 12 · 2026</p>
+    </footer>
+
+    <canvas id="fx"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
