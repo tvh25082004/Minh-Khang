@@ -839,6 +839,10 @@ body {
 .slide:nth-child(3) img { animation-delay: 1.3s; }
 .slide:nth-child(4) img { animation-delay: 1.9s; }
 .slide:nth-child(5) img { animation-delay: 2.5s; }
+.slide:nth-child(6) img { animation-delay: 3.1s; }
+.slide:nth-child(7) img { animation-delay: .4s; }
+.slide:nth-child(8) img { animation-delay: 1.05s; }
+.slide:nth-child(9) img { animation-delay: 1.65s; }
 
 @keyframes photoTilt {
     0%, 100% { transform: rotate(-1.6deg) scale(1); }

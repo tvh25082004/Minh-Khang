@@ -175,7 +175,7 @@
        ALBUM TỰ ĐỘNG CHẠY (autoplay)
        Ngừng khi bạn chạm/rê chuột, rồi tự chạy lại sau một chút
        ========================================================= */
-    const AUTOPLAY_MS = 3200;
+    const AUTOPLAY_MS = 3000;
     const RESUME_MS = 7000;
     const swipeSection = $('#swipe');
 
